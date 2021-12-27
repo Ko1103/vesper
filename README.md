@@ -9,9 +9,8 @@ https://en.wikipedia.org/wiki/Vesper_Lynd
 ```
 .
 ├── README.md
-├── packages
-│   ├── oas
-│   └── bond
-│       └── viron
-│       └── batch
+└── packages
+    ├── api
+    ├── oas
+    └── web
 ```

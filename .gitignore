@@ -119,3 +119,6 @@ dist
 .pnp.*
 
 # ---------- Node.js END --------------
+
+.DS_Store
+repos

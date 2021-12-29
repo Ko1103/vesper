@@ -1,0 +1,22 @@
+version: "3.4"
+services:
+  api:
+    build:
+      dockerfile: ./packages/api/Dockerfile
+      context: ./packages/api
+      target: build
+    ports:
+      - 3000:3000
+    environment:
+      - SERVICE_PORT=3000
+      - SERVICE_HOST=0.0.0.0
+      - SERVICE_ENV=local
+      - SERVICE_MODE=api
+    volumes:
+      - ./packages/api/node_modules:/docker/build/node_modules
+      - ./packages/api/src:/docker/build/src
+      - ./packages/api/package-lock.json:/docker/build/package-lock.json
+      - ./packages/api/package.json:/docker/build/package.json
+      - ./packages/api/tsconfig.json:/docker/build/tsconfig.json
+      - ./wait-for-it.sh:/docker/build/wait-for-it.sh
+    command: npm run develop
